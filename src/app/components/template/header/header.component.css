@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo {
+    max-height: 32px;
+}
+
+.header .title-group {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.header .title-group ul {
+    list-style: none;
+    display: flex;
+    align-content: space-between;
+}
+
+.header .title-group ul li {
+    margin-right: 15px;
+}
