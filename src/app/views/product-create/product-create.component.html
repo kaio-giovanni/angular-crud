@@ -1,0 +1,22 @@
+<mat-card class="card mat-elevation-z3">
+    <mat-card-header>
+        <mat-card-title class="card-title">Create new Product</mat-card-title>
+        <mat-card-subtitle class="card-subtitle">Product registration form</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="form">
+            <mat-form-field>
+                <input matInput placeholder="Name" [(ngModel)]="product.name" name="name">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Price" [(ngModel)]="product.price" name="price">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createProduct()" color="primary">
+            Create new Product
+        </button>
+        <button mat-raised-button (click)="navigateToProducts()">
+            Cancel
+        </button>
+    </mat-card-content>
+</mat-card>
