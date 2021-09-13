@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,11 @@ import { HomeComponent } from './views/home/home.component';
 import { ProductComponent } from './views/product/product.component';
 import { ProductCreateComponent } from './views/product-create/product-create.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -43,19 +49,23 @@ import { ProductListComponent } from './views/product-list/product-list.componen
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    AppRoutingModule,
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

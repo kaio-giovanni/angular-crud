@@ -21,6 +21,16 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
+  findById(id: number): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Product>(url);
+  }
+
+  update(product: Product): Observable<Product> {
+    const url = `${this.baseUrl}/${product.id}`;
+    return this.http.put<Product>(url, product);
+  }
+
   showMessage(message: string): void {
     this.snackBar.open(message, 'X', {
       duration: 5000,
