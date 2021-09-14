@@ -27,6 +27,7 @@ import { HomeComponent } from './views/home/home.component';
 import { ProductComponent } from './views/product/product.component';
 import { ProductCreateComponent } from './views/product-create/product-create.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
+import { ProductEditComponent } from './views/product-edit/product-edit.component';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -44,7 +45,8 @@ registerLocaleData(localePt);
     RedDirective,
     ForDirective,
     ProductCreateComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
